@@ -36,12 +36,17 @@
 (def nopeg-string "-")
 (def point-width 3)
 
-(defn init-right [point-number]
+(defn init-right [board point-number]
   (let [over (inc point-number)
         right (inc over)
         row-number (point-to-row point-number)
         row-max (row-to-max-point row-number)]
-    (when (and ()))))
+    (when (and (not= point-number row-max)
+               (not= over row-max))
+      (-> board
+          (assoc-in [point-number :connections right] over)
+          (assoc-in [right :connections point-number] over)))))
+
 (defn new-board
   [row-count]
   (when (and (>= row-count min-row-count)
