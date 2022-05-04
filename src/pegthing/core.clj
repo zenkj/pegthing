@@ -36,7 +36,12 @@
 (def nopeg-string "-")
 (def point-width 3)
 
-
+(defn init-right [point-number]
+  (let [over (inc point-number)
+        right (inc over)
+        row-number (point-to-row point-number)
+        row-max (row-to-max-point row-number)]
+    (when (and ()))))
 (defn new-board
   [row-count]
   (when (and (>= row-count min-row-count)
@@ -44,7 +49,8 @@
     (let [point-count (inc (row-to-max-point (dec row-count)))
           board0      (into [] (repeat point-count
                                        {:pegged true
-                                        :connections {}}))]
+                                        :connections {}}))
+          board       (update-in board0 [(rand-int point-count) :pegged] (fn [_] false))]
       )))
 
 
