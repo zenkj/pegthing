@@ -1,6 +1,7 @@
+# total 99m
 from random import randint
 
-# core function
+# core function -- 39m
 min_row_count = 3
 max_row_count = 11
 
@@ -56,7 +57,7 @@ def create_board(row_count):
         connect_down_right(board, i)
     return board
 
-# move functions
+# move functions -- 17m
 def can_move(board, from_point, to_point):
     points = board['points']
     if ((0 <= from_point < len(points)) and
@@ -90,7 +91,7 @@ def move(board, from_point, to_point):
     points[over_point]['pegged'] = False
     points[to_point]['pegged'] = True
 
-# UI function
+# render function -- 21m
 peg_string = '+'
 nopeg_string = '-'
 point_width = 3
@@ -116,7 +117,7 @@ def print_board(board):
         row_string = ''.join(point_str(points, i) for i in range(min_point, max_point+1))
         print(padding+row_string)
         
-    
+# main loop -- 22m
 def main():
     line = input("Please input the row count[5]:")
     try:
@@ -130,7 +131,7 @@ def main():
             for p in board['points']:
                 if p['pegged']:
                     pegged += 1
-            print("Game Over! {} pegged left".format(pegged))
+            print("Game Over! {} pegs left".format(pegged))
             break
         print_board(board)
         while True:

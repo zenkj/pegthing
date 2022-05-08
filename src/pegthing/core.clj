@@ -167,8 +167,7 @@
         (do (print-board board)
             (println "Move from where to where: ")
             (let [[from to] (read-points)]
-              (if (and from
-                       (can-move points from to))
+              (if (and from (can-move points from to))
                 (recur (move-peg board from to))
                 (do
                   (println "Invalid input")
