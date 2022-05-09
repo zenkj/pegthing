@@ -1,20 +1,11 @@
 # pegthing
 
-FIXME: description
-
-## Installation
-
-Download from http://example.com/FIXME.
+Implement pegthing using clojure and python, separately.
 
 ## Usage
 
-FIXME: explanation
 
-    $ java -jar pegthing-0.1.0-standalone.jar [args]
-
-## Options
-
-FIXME: listing of options this app accepts.
+    $ java -jar pegthing-0.1.0-standalone.jar
 
 ## Examples
 
@@ -24,13 +15,9 @@ FIXME: listing of options this app accepts.
 
 ...
 
-### Any Other Sections
-### That You Think
-### Might be Useful
-
 ## License
 
-Copyright © 2022 FIXME
+Copyright © 2022 zenkj
 
 This program and the accompanying materials are made available under the
 terms of the Eclipse Public License 2.0 which is available at
